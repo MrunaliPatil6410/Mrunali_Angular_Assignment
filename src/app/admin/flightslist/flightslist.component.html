@@ -1,0 +1,52 @@
+
+<div class="row">
+  <div class="col-xs-12">
+  <br>
+
+    <button class="btn btn-success" (click)="onNewFlight()">New Flight</button>
+
+</div>
+</div>
+
+<hr>
+   <h2 style="color:rgb(25, 23, 160);text-align:center;"><strong>All Flights</strong></h2><br>
+<div>
+<table class="table" >
+  <thead>
+    <tr>
+      <th scope="col">FlightId</th>
+      <th scope="col">Source Location</th>
+      <th scope="col">Destination Location</th>
+      <th scope="col">Flight Amount</th>
+      <th scope="col">Available Tickets</th>
+      <th scope="col">Flight Date</th>
+      <th scope="col">Operations</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let flight of collection">
+      <td>{{flight.id}}</td>
+      <td>{{flight.sourceLoc}}</td>
+      <td>{{flight.destLoc}}</td>
+      <td>{{flight.flightAmt}}</td>
+      <td>{{flight.availableTickets}}</td>
+      <td>{{flight.flightDate}}</td>
+
+      <td>
+        <i (click)="onDeleteFlight(flight.id)"
+        class="fa fa-trash" style="font-size:30px;color:red;">
+      </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a routerLink="/admin/flights/update/{{flight.id}}">
+        <i
+        class="fa fa-edit" style="font-size:30px;color:blue">
+      </i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+     <a style="color:blue" routerLink="/admin/flights/flightDetails/{{flight.id}}"> View Detail</a>
+
+    </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+

@@ -1,0 +1,63 @@
+<br><br><br>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success !</strong> Your data has been entered successfully.
+  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup] ="addFlightForm" (ngSubmit)="addFlight()">
+  <div class="mb-3">
+    <label for="sourceLoc" class="form-label">Source Location</label>
+    <input type="text"
+    class="form-control"
+    id="sourceLoc"
+    placeholder="Enter Source location"
+    name="sourceLoc"
+    formControlName="sourceLoc">
+    <span class="error" *ngIf="!sourceLoc.valid && sourceLoc.touched">*source location is required</span>
+  </div>
+  <div class="mb-3">
+    <label for="destLoc" class="form-label">Destination Location</label>
+    <input type="text"
+    class="form-control"
+    id="destLoc"
+    placeholder="Enter destination location"
+    name="destLoc"
+    formControlName="destLoc">
+    <span class="error" *ngIf="!destLoc.valid && destLoc.touched">*destination location is required</span>
+  </div>
+  <div class="mb-3">
+    <label for="flightAmt" class="form-label">Flight Amount</label>
+    <input type="number"
+    class="form-control"
+    id="flightAmt"
+    placeholder="Enter flight Amount"
+    name="flightAmt"
+    formControlName="flightAmt">
+    <span class="error" *ngIf="!flightAmt.valid && flightAmt.touched">*entered amount is invalid</span>
+  </div>
+  <div class="mb-3">
+    <label for="availableTickets" class="form-label">Available Tickets</label>
+    <input type="number"
+    class="form-control"
+    id="availableTickets"
+    placeholder="Enter available tickets"
+    name="availableTickets"
+    formControlName="availableTickets">
+    <span class="error" *ngIf="!availableTickets.valid && availableTickets.touched">*entered value is invalid</span>
+  </div>
+  <div class="mb-3">
+    <label for="flightDate" class="form-label">Flight Date</label>
+    <input type="date"
+    class="form-control"
+    id="flightDate"
+    placeholder="Enter Flight date"
+    name="flightDate"
+    formControlName="flightDate">
+    <span class="error" *ngIf="!flightDate.valid && flightDate.touched">*flight date is required</span>
+  </div>
+  <div>
+  <button type="submit" class="btn btn-primary" [disabled]="!addFlightForm.valid">Submit</button>&nbsp;
+  <button type="button" class="btn btn-danger" (click)="onCancle()">Cancle</button>
+</div>
+</form>

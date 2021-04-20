@@ -1,0 +1,54 @@
+
+<div class="row">
+  <div class="col-xs-12">
+  <br>
+
+    <button class="btn btn-success" (click)="onNewLocation()">New Location</button>
+    <ul  style="padding-left: 500px">
+      <a routerLink="/admin/flights"><strong>All Flight</strong> </a>
+    </ul>
+
+
+
+  </div>
+</div>
+
+<hr>
+
+<h2 style="color:rgb(25, 23, 160);text-align:center;"><strong>All Locations</strong></h2><br>
+
+<div>
+<table class="table" >
+  <thead>
+    <tr>
+      <th scope="col">LocationId</th>
+      <th scope="col">Source Location</th>
+      <th scope="col">Destination Location</th>
+
+      <th scope="col">Operations</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let location of collection">
+      <td>{{location.id}}</td>
+      <td>{{location.sourceLoc}}</td>
+      <td>{{location.destLoc}}</td>
+
+      <td>
+        <i (click)="deleteLocation(location.id)"
+        class="fa fa-trash" style="font-size:30px;color:red;">
+      </i>
+        <a routerLink="/admin/edit/{{location.id}}">
+        <i
+        class="fa fa-edit" style="font-size:30px;color:blue">
+      </i></a>
+
+     <a style="color:blue" routerLink="/admin/viewDetails/{{location.id}}"> View Detail</a>
+
+    </td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+

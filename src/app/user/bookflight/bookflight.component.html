@@ -1,0 +1,73 @@
+<br><br><br>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success !</strong> Your data has been entered successfully.
+  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup] = "bookFlightForm" (ngSubmit)="bookFlight()">
+  <div class="mb-3">
+    <label for="flightId" class="form-label">Flight Id</label>
+    <input type="text"
+    class="form-control"
+    id="flightId"
+
+    name="flightId"
+    formControlName="flightId">
+
+
+  </div>
+  <div class="mb-3">
+    <label for="userName" class="form-label">User Name</label>
+    <input type="text"
+    class="form-control"
+    id="userName"
+    placeholder="Enter User name"
+    name="userName"
+    formControlName="userName" >
+    <span class="error" *ngIf="!userName.valid && userName.touched">*user name is required</span>
+
+  </div >
+  <div class="mb-3">
+    <label for="gender" class="form-label">Gender</label><br>
+  <div  class="form-control">
+
+    <input type="radio"  name="gender" formControlName="gender" value="male" >&nbsp;&nbsp;
+   <label  for="customRadio1">Male</label>&nbsp;&nbsp;
+   <input type="radio" name="gender" formControlName="gender" value="female" >
+      <label  for="customRadio2">Female</label>
+</div>
+    <span class="error"
+    *ngIf="!gender.valid && gender.touched">
+    *gender is required</span>
+  </div>
+
+
+  <div class="mb-3">
+    <label for="age" class="form-label">Age</label>
+    <input type="number"
+    class="form-control"
+    id="age"
+    placeholder="Enter your age"
+    name="age"
+    formControlName="age"
+    >
+    <span class="error"
+    *ngIf="!age.valid && age.touched">
+    *age is invalid</span>
+  </div>
+  <div class="mb-3">
+    <label for="flightDate" class="form-label">Journey Date</label>
+    <input type="date"
+    class="form-control"
+    id="flightDate"
+
+    name="flightDate"
+    formControlName="flightDate">
+
+  </div>
+  <div>
+  <button type="submit" class="btn btn-primary" >Submit</button>&nbsp;
+  <button type="button" class="btn btn-danger" (click)="onCancle()">Cancle</button>
+</div>
+</form>

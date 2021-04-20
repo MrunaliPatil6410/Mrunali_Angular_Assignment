@@ -1,0 +1,51 @@
+{
+  "flights": [
+    {
+      "sourceLoc": "Delhi",
+      "destLoc": "Mumbai",
+      "flightAmt": 10000,
+      "availableTickets": 13,
+      "flightDate": "2021-04-22",
+      "id": 1
+    },
+    {
+      "sourceLoc": "Pune",
+      "destLoc": "Haidrabad",
+      "flightAmt": 7000,
+      "availableTickets": 11,
+      "flightDate": "2021-04-30",
+      "id": 2
+    }
+  ],
+  "locations": [
+    {
+      "sourceLoc": "Pune",
+      "destLoc": "Delhi West",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "sourceLoc": "Mumbai",
+      "destLoc": "Delhi"
+    }
+  ],
+  "users": [
+    {
+      "userName": "Mrunali",
+      "email": "mrunal64p@gmail.com",
+      "password": "Mrunali@123",
+      "id": 1
+    }
+  ],
+  "bookFlights": [
+    {
+      "flightId": 1,
+      "flightDate": "2021-04-22",
+      "userName": "kalpana",
+      "gender": "female",
+      "age": 25,
+      "availableTickets": 12,
+      "id": 1
+    }
+  ]
+}

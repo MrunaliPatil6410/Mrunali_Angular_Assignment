@@ -1,0 +1,12 @@
+{
+  "flights": [
+    {
+	"flightId": 1,
+	"sourceLoc": "pune",
+	"destLoc": "Delhi",
+	"flightAmt": 10000,
+	"availableTickets": 10,
+	"flightDate": "21/3/2021"
+     }
+ ]
+}

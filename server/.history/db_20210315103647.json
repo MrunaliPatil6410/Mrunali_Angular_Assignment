@@ -1,0 +1,35 @@
+{
+  "flights": [
+    {
+      "id": 1,
+      "sourceLoc": "pune",
+      "destLoc": "Delhi",
+      "flightAmt": 10000,
+      "availableTickets": 10,
+      "flightDate": "21/3/2021"
+    },
+    {
+      "id": 2,
+      "sourceLoc": "Mumbai",
+      "destLoc": "Delhi",
+      "flightAmt": 8000,
+      "availableTickets": 9,
+      "flightDate": "19/3/2021"
+    }
+  ],
+  "locations":[
+    {
+    "sourceLoc" : "pune",
+    "destLoc" : "Delhi"
+    },
+    {
+      "sourceLoc" : "Mumbai",
+      "destLoc" : "Delhi"
+    },
+    {
+      "sourceLoc" : "Belgum",
+      "destLoc" : "Banglore"
+      }
+  ]
+
+}

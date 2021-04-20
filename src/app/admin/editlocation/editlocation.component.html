@@ -1,0 +1,33 @@
+<br><br><br>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Update Successfully !</strong> Your data has been updated successfully.
+  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup] = "editForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="sourceLoc" class="form-label">Source Location</label>
+    <input type="text"
+    class="form-control"
+    id="sourceLoc"
+    placeholder="Enter Source location"
+    name="sourceLoc"
+    formControlName="sourceLoc">
+    <span class="error" *ngIf="!sourceLoc.valid && sourceLoc.touched">*source location is required</span>
+  </div>
+  <div class="mb-3">
+    <label for="destLoc" class="form-label">Destination Location</label>
+    <input type="text"
+    class="form-control"
+    id="destLoc"
+    placeholder="Enter destination location"
+    name="destLoc"
+    formControlName="destLoc">
+    <span class="error" *ngIf="!destLoc.valid && destLoc.touched">*destination location is required</span>
+  </div>
+  <div>
+  <button type="submit" class="btn btn-primary" [disabled]="!editForm.valid">Update</button>&nbsp;
+  <button type="button" class="btn btn-danger" (click)="onCancle()">Cancle</button>
+</div>
+</form>
